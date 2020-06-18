@@ -17,14 +17,12 @@
           <img src="./images/record.png" alt />大专
         </div>
       </div>
-
       <div class="compan-address">
         <div class="address">
           <img src="./images/address.png" alt />
         </div>
         <div class="address-info">广州市海珠区蚝壳街17号“1号汇创”A座203a</div>
       </div>
-
       <div class="hr">
         <div class="avatar">
           <img src="../../assets/images/avatar.png" alt />
@@ -41,7 +39,7 @@
         </div>
       </div>
     </div>
-    <!-- 公司介绍 -->
+    <!-- 职责描述 -->
     <div class="instruction">
       <div class="title">
         <img src="../../assets/images/title.png" alt />职位描述
@@ -67,6 +65,57 @@
         <div class="green">福利标签</div>
       </div>
     </div>
+    <!-- 公司信息 -->
+    <div class="instruction">
+      <div class="title">
+        <img src="./images/title.png" alt />公司信息
+      </div>
+      <!-- 头部 -->
+      <div class="list">
+        <div class="compnay-info">
+          <div class="logo">
+            <img src="../../assets/images/company-logo.png" alt />
+          </div>
+          <div class="info">
+            <div class="name">广州市志在信息科技有限公司</div>
+            <div class="nature">
+              <span>民营企业</span>
+              <span>少于50人</span>
+              <span>互联网公司</span>
+            </div>
+            <div class="interviewing">
+              在招职位
+              <span>22</span>个
+            </div>
+          </div>
+          <div class="right">
+            <img src="./images/right.png" alt />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="back" @click="back">
+        <div class="my-img">
+          <img src="./images/back.png" alt />
+        </div>
+        <div class="title"> 返回</div>
+      </div>
+      <div class="back">
+        <div class="my-img">
+          <img src="./images/share.png" alt />
+        </div>
+        <div class="title">分享</div>
+      </div>
+      <div class="back">
+        <div class="my-img">
+          <img src="./images/collect.png" alt />
+        </div>
+        <div class="title">收藏</div>
+      </div>
+      <div class="save">立即投递</div>
+    </div>
   </div>
 </template>
 
@@ -75,7 +124,7 @@ export default {
   name: "CompanyInfo",
   methods: {
     back() {
-      this.$router.push("./info/read");
+      this.$router.push("./home");
     },
     // 去在招职位
     toRecruit() {
@@ -221,6 +270,122 @@ export default {
       border-color: #6ba2fd;
       color: #6ba2fd;
     }
+  }
+  .list {
+    width: 100%;
+    .compnay-info {
+      display: flex;
+      position: relative;
+      padding-bottom: 0.1rem;
+      box-sizing: border-box;
+      .logo {
+        width: 1rem;
+        margin-right: 0.2rem;
+        margin-top: 0.4rem;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      .info {
+        width: 5rem;
+        .name {
+          font-size: 0.28rem;
+          color: #323232;
+          margin-top: 0.3rem;
+        }
+        .nature {
+          line-height: 0.6rem;
+          display: flex;
+          flex-wrap: nowrap;
+          position: relative;
+          span {
+            display: block;
+            font-size: 0.28rem;
+            color: #9a9a9a;
+            position: relative;
+            margin-right: 0.2rem;
+            &:last-of-type {
+              &::after {
+                background: transparent;
+              }
+            }
+            &::after {
+              position: absolute;
+              top: 0.18rem;
+              right: -0.1rem;
+              content: "";
+              width: 0.03rem;
+              height: 0.23rem;
+              background: #ccc;
+            }
+          }
+        }
+        .interviewing {
+          font-size: 0.28rem;
+          color: #9a9a9a;
+          span {
+            color: $font-color;
+            margin: 0 0.1rem;
+          }
+        }
+      }
+      .right {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        width: 0.15rem;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.footer {
+  width: 100vw;
+  padding: 0 .3rem;
+  box-sizing: border-box;
+  display: flex;
+  height: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  .back {
+    width: .8rem;
+    margin-right: .3rem;
+    margin-top: .2rem;
+    .my-img {
+      width: .3rem;
+      margin: auto;
+      height: .4rem;
+      overflow: hidden;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .title {
+      width: 100%;
+      text-align: center;
+      color: #323232;
+      font-size: .28rem;
+    }
+  }
+  .save {
+    flex: 1;
+    font-size: .36rem;
+    text-align: center;
+    color: #fff;
+    margin-top: .16rem;
+    line-height: .7rem;
+    height: .7rem;
+    border-radius: .1rem;
+    background-image: linear-gradient(to right, #FFB246, #FF8853);
   }
 }
 </style>
